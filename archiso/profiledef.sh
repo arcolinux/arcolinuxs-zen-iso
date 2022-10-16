@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="arcolinuxs-xanmod"
-iso_label="arcolinuxs-xanmod-v22.11.02"
+iso_name="arcolinuxs-zen"
+iso_label="arcolinuxs-zen-v22.11.02"
 iso_publisher="ArcoLinux <http://www.arcolinux.info>"
 iso_application="ArcoLinux Live/Rescue CD"
 iso_version="v22.11.02"
