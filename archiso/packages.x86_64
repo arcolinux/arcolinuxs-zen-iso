@@ -919,3 +919,5 @@ xfce4-goodies
 
 linux-zen
 linux-zen-headers
+
+mkinitcpio-firmware
