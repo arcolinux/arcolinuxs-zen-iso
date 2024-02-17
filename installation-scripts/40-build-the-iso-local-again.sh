@@ -38,6 +38,12 @@ echo
 	buildFolder=$HOME"/arcolinux-build"
 	outFolder=$HOME"/ArcoLinux-Out"
 	archisoVersion=$(sudo pacman -Q archiso)
+
+	# If you want to add packages from the chaotics-aur repo then
+	# change the variable to true and add the package names
+	# that are hosted on chaotics-aur in the packages.x86_64 at the bottom
+
+	chaoticsrepo=false
 	
 	# If you are ready to use your personal repo and personal packages
 	# https://arcolinux.com/use-our-knowledge-and-create-your-own-icon-theme-combo-use-github-to-saveguard-your-work/
@@ -198,6 +204,14 @@ echo
 		cat personal-repo | sudo tee -a $buildFolder/archiso/airootfs/etc/pacman.conf
 	fi
 
+	if [ $chaoticsrepo == true ]; then
+		echo "Adding our chaotics repo to /etc/pacman.conf"
+		printf "\n" | sudo tee -a ../work/archiso/pacman.conf
+		printf "\n" | sudo tee -a ../work/archiso/airootfs/etc/pacman.conf
+		cat chaotics-repo | sudo tee -a ../work/archiso/pacman.conf
+		cat chaotics-repo | sudo tee -a ../work/archiso/airootfs/etc/pacman.conf
+	fi
+
 echo
 echo "################################################################## "
 tput setaf 2
@@ -211,18 +225,18 @@ echo
 	#Setting variables
 
 	#profiledef.sh
-	oldname1='iso_name="arcolinuxs-lts'
-	newname1='iso_name="arcolinuxs-lts'
+	oldname1='iso_name="arcolinuxs-zen'
+	newname1='iso_name="arcolinuxs-zen'
 
-	oldname2='iso_label="arcolinuxs-lts'
-	newname2='iso_label="arcolinuxs-lts'
+	oldname2='iso_label="arcolinuxs-zen'
+	newname2='iso_label="arcolinuxs-zen'
 
-	oldname3='ArcoLinuxS-Lts'
-	newname3='ArcoLinuxS-Lts'
+	oldname3='ArcoLinuxS-Zen'
+	newname3='ArcoLinuxS-Zen'
 
 	#hostname
-	oldname4='ArcoLinuxS-Lts'
-	newname4='ArcoLinuxS-Lts'
+	oldname4='ArcoLinuxS-Zen'
+	newname4='ArcoLinuxS-Zen'
 
 	#sddm.conf user-session
 	oldname5='Session=xfce'

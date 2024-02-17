@@ -933,8 +933,10 @@ menulibre
 ###########################################################################
 xfce4
 xfce4-goodies
+mkinitcpio-firmware
 
 linux-zen
 linux-zen-headers
 
-mkinitcpio-firmware
+## chaotics-aur
+#flat-remix
